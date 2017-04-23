@@ -1,10 +1,10 @@
 <h1>Duck Recognizer</h1>
 
-<%= form_tag("/search", method: "get") do %>
+<%= form_tag(controller: 'recognizer', action: 'search', method: 'post') do %>
   <div style="margin-bottom:20px;">
-    <%= label_tag(:image, "Image URL:") %>
+    <%= label_tag(:image, 'Image URL:') %>
     <!-- <%= file_field_tag(:image) %> -->
     <%= text_field_tag(:image) %>
   </div>
-  <%= submit_tag("Search for ducks") %>
+  <%= submit_tag('Search for ducks') %>
 <% end %>

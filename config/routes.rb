@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'recognizer/index'
-  get '/search', to: 'recognizer#search'
+
+  controller :recognizer do
+    get '/'         => :index
+    post '/search'  => :search, as: 'search'
+    get '/search'   => :search
+  end
 
   root 'recognizer#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,2 @@
+class DuckPattern < ApplicationRecord
+end

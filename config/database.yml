@@ -24,11 +24,7 @@ development:
    database: DuckRecognizer
    username: <%= Rails.application.secrets[:db_user] %>
    password: <%= Rails.application.secrets[:db_password] %>
-#   username: duckrecognizer
-#   password: duckrecognizer
    host: localhost
-#  <<: *default
-#  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -42,7 +38,9 @@ test:
 #  database: db/production.sqlite3
 production:
    adapter: mysql2
+   encoding: utf8
+   pool: 5
    database: DuckRecognizer
-   username: duckrecognizer
-   password: duckrecognizer
-   host: localhost
+   username: <%= Rails.application.secrets[:db_user] %>
+   password: <%= Rails.application.secrets[:db_password] %>
+   host: <%= Rails.application.secrets[:db_host] %>

@@ -1,3 +1,10 @@
 <h1>Search Result</h1>
 
-<h2>Found a Duck in the image!</h2>
+<!--<%= session[:counter] %>-->
+<% if found? %>
+    <h2>Found a Duck in the image!</h2>
+<% else %>
+    <h2>Sorry, no ducks</h2>
+<% end %>
+
+<%= link_to 'Search for more ducks', :back %>
